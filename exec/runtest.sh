@@ -11,7 +11,7 @@ DOCLEAN=1        # Delete created files (before and after running tasks).
 DOCONVERT=1      # Convert AliESDs.root to AO2D.root.
 DOALI=1          # Run AliPhysics tasks.
 DOO2=1           # Run O2 tasks.
-DOPOSTPROCESS=1  # Run output postprocessing. (Compare AliPhysics and O2 output.)
+DOPOSTPROCESS=0  # Run output postprocessing. (Compare AliPhysics and O2 output.)
 
 # Configuration scripts
 CONFIG_INPUT="config_input.sh"  # Input specification (Modifies input parameters.)
@@ -59,7 +59,7 @@ FILEOUT_TREES_O2="AnalysisResults_trees_O2.root"
 
 # Steering commands
 ENVALI="alienv setenv AliPhysics/latest -c"
-ENVO2="alienv setenv O2Physics/latest -c"
+ENVO2="alienv setenv O2/latest-LambdacFlow-o2 -c"
 ENVPOST="alienv setenv ROOT/latest -c"
 
 # Step scripts

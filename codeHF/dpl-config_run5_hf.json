@@ -1047,6 +1047,25 @@
             ]
         }
     },
+    "hf-task-lc-flow": {
+        "cutYCandMax": "2.0",
+        "d_selectionFlagLc": "0",
+        "ptBins": {
+            "values": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "8",
+                "12",
+                "24",
+                "36"
+            ]
+        }
+    },
     "hf-track-index-skims-cascades-creator": {
         "doValPlots": "true",
         "bZ": "5",

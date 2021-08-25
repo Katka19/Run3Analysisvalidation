@@ -18,7 +18,7 @@ DOCLEAN=1           # Delete created files (before and after running tasks).
 DOCONVERT=1         # Convert AliESDs.root to AO2D.root.
 DOALI=1             # Run AliPhysics tasks.
 DOO2=1              # Run O2 tasks.
-DOPOSTPROCESS=1     # Run output postprocessing. (Compare AliPhysics and O2 output.)
+DOPOSTPROCESS=0     # Run output postprocessing. (Compare AliPhysics and O2 output.)
 
 # Disable incompatible steps.
 [ "$ISINPUTO2" -eq 1 ] && { DOCONVERT=0; DOALI=0; }
@@ -54,7 +54,7 @@ DOO2_SEL_JPSI=0     # hf-jpsi-candidate-selector
 DOO2_SEL_X=0        # hf-xic-topkpi-candidate-selector
 DOO2_SEL_LCK0SP=0   # hf-lc-tok0sp-candidate-selector
 # User tasks
-DOO2_TASK_D0=1      # hf-task-d0
+DOO2_TASK_D0=0      # hf-task-d0
 DOO2_TASK_DPLUS=0   # hf-task-dplus
 DOO2_TASK_LC=0      # hf-task-lc
 DOO2_TASK_XIC=0     # hf-task-xic
@@ -62,6 +62,7 @@ DOO2_TASK_JPSI=0    # hf-task-jpsi
 DOO2_TASK_BPLUS=0   # hf-task-bplus
 DOO2_TASK_X=0       # hf-task-x
 DOO2_TASK_LCK0SP=0  # hf-task-lc-tok0sp
+DOO2_TASK_LCFLOW=1  # hf-task-lc-flow
 # Tree creators
 DOO2_TREE_D0=0      # hf-tree-creator-d0-tokpi
 DOO2_TREE_LC=0      # hf-tree-creator-lc-topkpi
@@ -202,6 +203,7 @@ function MakeScriptO2 {
   [ $DOO2_TASK_BPLUS -eq 1 ] && WORKFLOWS+=" o2-analysis-hf-task-bplus"
   [ $DOO2_TASK_X -eq 1 ] && WORKFLOWS+=" o2-analysis-hf-task-x"
   [ $DOO2_TASK_LCK0SP -eq 1 ] && WORKFLOWS+=" o2-analysis-hf-task-lc-tok0sp"
+  [ $DOO2_TASK_LCFLOW -eq 1 ] && WORKFLOWS+=" o2-analysis-hf-task-lc-flow"
   WF_CORR=""
   [ $DOO2_D0D0BAR_DATA -eq 1 ] && WF_CORR="o2-analysis-hf-correlator-d0d0bar o2-analysis-hf-task-correlation-ddbar"
   [ $DOO2_D0D0BAR_MCREC -eq 1 ] && WF_CORR="o2-analysis-hf-correlator-d0d0bar-mc-rec o2-analysis-hf-task-correlation-ddbar-mc-rec"
