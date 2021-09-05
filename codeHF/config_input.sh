@@ -6,12 +6,12 @@
 
 INPUT_CASE=10            # Input case
 
-NFILESMAX=1             # Maximum number of processed input files. (Set to -0 to process all; to -N to process all but the last N files.)
+NFILESMAX=10             # Maximum number of processed input files. (Set to -0 to process all; to -N to process all but the last N files.)
 
 # Number of input files per job (Automatic optimisation on if < 1.)
 NFILESPERJOB_CONVERT=0  # Conversion
 NFILESPERJOB_ALI=0      # AliPhysics
-NFILESPERJOB_O2=1       # O2
+NFILESPERJOB_O2=2       # O2
 
 # Maximum number of simultaneously running O2 jobs
 NJOBSPARALLEL_O2=$(python3 -c "print(min(10, round($(nproc) / 2)))")
@@ -78,7 +78,7 @@ case $INPUT_CASE in
   10)
     INPUT_LABEL="Run 5, p-p MC 14 TeV ccbar-enriched, Layout v1, HF analysis"
     #INPUT_DIR="/data/Run5/MC/pp_14TeV/CCBarLcPKPi_v1"
-    INPUT_DIR="/home/mmazzill/pp14TeV_ccbarLc_20M_v1_04072021"
+    INPUT_DIR="/Users/katka/aliceo2/Run3Analysisvalidation/codeHF/data/PbPb"
     INPUT_FILES="AODRun5.*.root"
     JSON="$JSONRUN5_HF"
     ISINPUTO2=1
