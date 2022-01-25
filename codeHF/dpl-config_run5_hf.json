@@ -622,6 +622,44 @@
             ]
         }
     },
+    "hf-task-lc-centrality": {
+        "cutYCandMax": "1.0",
+        "d_selectionFlagLc": "1",
+        "pTBins": {
+            "values": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "8",
+                "12",
+                "24",
+                "36"
+            ]
+        }
+    },
+    "hf-task-lc-mc-centrality": {
+        "cutYCandMax": "1.0",
+        "d_selectionFlagLc": "1",
+        "pTBins": {
+            "values": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "8",
+                "12",
+                "24",
+                "36"
+            ]
+        }
+    },
     "hf-task-xic": {
         "cutEtaCandMax": "-1",
         "d_selectionFlagXic": "0",
