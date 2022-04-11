@@ -7,22 +7,39 @@
         "aod-file": "@list_o2.txt"
     },
     "timestamp-task": {
-        "isRun2MC": "true"
+        "isRun2MC": "false"
     },
     "bc-selection-task": {
-        "processRun2": "true",
-        "processRun3": "false"
+        "processRun2": "false",
+        "processRun3": "true"
     },
     "event-selection-task": {
         "syst": "pp",
         "muonSelection": "0",
         "isMC": "true",
-        "processRun2": "true",
-        "processRun3": "false"
+        "processRun2": "false",
+        "processRun3": "true"
+    },
+    "track-selection": {
+        "isRun3": "true"
     },
     "track-extension": {
-        "processRun2": "true",
-        "processRun3": "false"
+        "processRun2": "false",
+        "processRun3": "true"
+    },
+    "multiplicity-table": {
+        "processRun2": "false",
+        "processRun3": "true"
+    },
+    "centrality-table": {
+        "estV0M": "-1",
+        "estRun2SPDtks": "-1",
+        "estRun2SPDcls": "-1",
+        "estRun2CL0": "-1",
+        "estRun2CL1": "-1",
+        "ccdburl": "http:\/\/alice-ccdb.cern.ch",
+        "ccdbpath": "Centrality\/Estimators",
+        "genname": ""
     },
     "hf-tag-sel-collisions": {
         "fillHistograms": "true",
@@ -43,6 +60,7 @@
         "bz": "5.",
         "doCutQuality": "true",
         "tpcNClsFound": "71",
+        "useIsGlobalTrack": "true",
         "pTBinsTrack": {
             "values": [
                 "0.",
@@ -736,6 +754,148 @@
         "selectionFlagLc": "0",
         "selectionFlagLcbar": "0",
         "cutEtaCandMax": "-1"
+    },
+    "task-hf-correlations": {
+        "cfgCutEta": "0.8",
+        "cfgCutPt": "0.5",
+        "d_selectionFlagD0": "0",
+        "d_selectionFlagD0bar": "0",
+        "cutYCandMax": "1.0",
+        "pTBins": {
+            "values": [
+                "0",
+                "0.5",
+                "1",
+                "1.5",
+                "2",
+                "2.5",
+                "3",
+                "3.5",
+                "4",
+                "4.5",
+                "5",
+                "5.5",
+                "6",
+                "6.5",
+                "7",
+                "7.5",
+                "8",
+                "9",
+                "10",
+                "12",
+                "16",
+                "20",
+                "24",
+                "36",
+                "50",
+                "100"
+            ]
+        },
+        "axisVertex": {
+            "values": [
+                "7",
+                "-7",
+                "7"
+            ]
+        },
+        "axisDeltaPhi": {
+            "values": [
+                "72",
+                "-1.5707963705062866",
+                "4.7123889923095703"
+            ]
+        },
+        "axisDeltaEta": {
+            "values": [
+                "40",
+                "-2",
+                "2"
+            ]
+        },
+        "axisPtTrigger": {
+            "values": [
+                "0",
+                "0.5",
+                "1",
+                "1.5",
+                "2",
+                "3",
+                "4",
+                "6",
+                "10"
+            ]
+        },
+        "axisPtAssoc": {
+            "values": [
+                "0",
+                "0.5",
+                "1",
+                "1.5",
+                "2",
+                "3",
+                "4",
+                "6"
+            ]
+        },
+        "axisMultiplicity": {
+            "values": [
+                "0",
+                "0",
+                "5",
+                "10",
+                "20",
+                "30",
+                "40",
+                "50",
+                "100.09999999999999"
+            ]
+        },
+        "axisVertexEfficiency": {
+            "values": [
+                "10",
+                "-10",
+                "10"
+            ]
+        },
+        "axisEtaEfficiency": {
+            "values": [
+                "20",
+                "-1",
+                "1"
+            ]
+        },
+        "axisPtEfficiency": {
+            "values": [
+                "0",
+                "0.5",
+                "0.59999999999999998",
+                "0.69999999999999996",
+                "0.80000000000000004",
+                "0.90000000000000002",
+                "1",
+                "1.25",
+                "1.5",
+                "1.75",
+                "2",
+                "2.25",
+                "2.5",
+                "2.75",
+                "3",
+                "3.25",
+                "3.5",
+                "3.75",
+                "4",
+                "4.5",
+                "5",
+                "6",
+                "7",
+                "8"
+            ]
+        },
+        "processTPCTPChh": "true",
+        "processTPCMFThh": "true",
+        "processHFHadrons": "true",
+        "processSameAOD": "true"
     },
     "qa-tracking-efficiency-electron": {
         "eta-min": "-3",

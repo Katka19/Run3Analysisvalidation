@@ -197,6 +197,10 @@ workflows:
     requires_mc: yes
     options: "--doMCGen"
 
+  o2-analysis-hf-task-hfcorrelations:
+    dependencies: 
+      - o2-analysis-hf-d0-candidate-selector
+
   # Tree creators
 
   o2-analysis-hf-tree-creator-d0-tokpi:
@@ -284,9 +288,16 @@ workflows:
 
   # Helper tasks
 
+  o2-analysis-mc-converter: {}
+
+  o2-analysis-multiplicity-table: 
+    dependencies:
+      - o2-analysis-event-selection
+
   o2-analysis-timestamp: {}
 
-  o2-analysis-trackselection: {}
+  o2-analysis-trackselection: 
+    dependencies: o2-analysis-trackextension
 
   o2-analysis-trackselection-alice3:
     executable: o2-analysis-alice3-trackselection
@@ -300,9 +311,9 @@ workflows:
   o2-analysis-alice3-centrality:
     dependencies: o2-analysis-trackextension-alice3
 
-  o2-analysis-event-selection: {}
-
-  o2-analysis-multiplicity-table: {}
+  o2-analysis-event-selection: 
+    dependencies: 
+      - o2-analysis-timestamp
 
   o2-analysis-pid-tpc-full:
     dependencies: o2-analysis-multiplicity-table

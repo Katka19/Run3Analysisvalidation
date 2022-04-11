@@ -4,7 +4,7 @@
 # Input specification for runtest.sh
 # (Modifies input parameters.)
 
-INPUT_CASE=2            # Input case
+INPUT_CASE=18            # Input case
 
 NFILESMAX=1             # Maximum number of processed input files. (Set to -0 to process all; to -N to process all but the last N files.)
 
@@ -152,5 +152,13 @@ case $INPUT_CASE in
     JSON="$JSONRUN5_ONIAX"
     ISINPUTO2=1
     ISALICE3=1
+    ISMC=1;;
+  18)
+    INPUT_LABEL="Run 3, pp 13.6 TeV, MB"
+    INPUT_DIR="/home/kgajdoso/data/Run3MC/13TeV/LHC21k6/302006" #being QAed
+    #INPUT_DIR="/home/kgajdoso/data/Run3MC/13TeV/LHC21k6/302004" #obsolete, missing some MFT track information
+    INPUT_FILES="AO2D.root"
+    JSON="$JSONRUN3"
+    ISINPUTO2=1
     ISMC=1;;
 esac
