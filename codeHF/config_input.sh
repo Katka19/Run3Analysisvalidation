@@ -155,8 +155,9 @@ case $INPUT_CASE in
     ISMC=1;;
   18)
     INPUT_LABEL="Run 3, pp 13.6 TeV, MB"
-    INPUT_DIR="/home/kgajdoso/data/Run3MC/13TeV/LHC21k6/302006" #being QAed
-    #INPUT_DIR="/home/kgajdoso/data/Run3MC/13TeV/LHC21k6/302004" #obsolete, missing some MFT track information
+    #INPUT_DIR="/home/kgajdoso/data/Run3MC/13TeV/LHC21k6/302015"
+    INPUT_DIR="/data2/vkucera/alice/sim/2021/LHC21k6/302015"
+    #INPUT_DIR="/home/mmazzill/LHC21k6/302013/"
     INPUT_FILES="AO2D.root"
     JSON="$JSONRUN3"
     ISINPUTO2=1
