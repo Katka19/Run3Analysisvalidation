@@ -10,26 +10,26 @@
         "isRun2MC": "false"
     },
     "bc-selection-task": {
-        "processRun2": "false",
-        "processRun3": "true"
+        "processRun2": "true",
+        "processRun3": "false"
     },
     "event-selection-task": {
         "syst": "pp",
         "muonSelection": "0",
         "isMC": "true",
-        "processRun2": "false",
-        "processRun3": "true"
+        "processRun2": "true",
+        "processRun3": "false"
     },
     "track-selection": {
-        "isRun3": "true"
+        "isRun3": "false"
     },
     "track-extension": {
-        "processRun2": "false",
-        "processRun3": "true"
+        "processRun2": "true",
+        "processRun3": "false"
     },
     "multiplicity-table": {
-        "processRun2": "false",
-        "processRun3": "true"
+        "processRun2": "true",
+        "processRun3": "false"
     },
     "centrality-table": {
         "estV0M": "-1",
@@ -897,11 +897,11 @@
         "processTPCMFThh": "true",
         "processHFHadrons": "true",
         "cfgNoMixedEvents": 5,
-        "processSameRun2": "false",
-        "processSameRun3": "true",
+        "processSameRun2": "true",
+        "processSameRun3": "false",
         "processMixed": "true",
-        "processRun2": "false",
-        "processRun3": "true"
+        "processRun2": "true",
+        "processRun3": "false"
     },
     "qa-tracking-efficiency-electron": {
         "eta-min": "-3",

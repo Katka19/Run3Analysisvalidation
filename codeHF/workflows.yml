@@ -328,6 +328,8 @@ workflows:
 
   o2-analysis-pid-tof-beta: {}
 
+  o2-analysis-pid-tof-base: {}
+
   # LF
 
   o2-analysis-lf-lambdakzerobuilder:
