@@ -15,14 +15,14 @@ workflows:
   o2-analysis-hf-track-index-skims-creator: &skim_creator
     executable: o2-analysis-hf-track-index-skims-creator
     dependencies:
-      - o2-analysis-trackextension
+      #- o2-analysis-trackextension
       - o2-analysis-trackselection
     tables: [HFSELCOLLISION, HFSELTRACK, HF2PRONG, HF3PRONG]
 
   o2-analysis-hf-track-index-skims-creator-v0:
     <<: *skim_creator
     dependencies:
-      - o2-analysis-trackextension
+      #- o2-analysis-trackextension
       - o2-analysis-trackselection
       - o2-analysis-lf-lambdakzerobuilder
     options: "--doCascades"
@@ -202,7 +202,10 @@ workflows:
 
   o2-analysis-hf-task-flow:
     dependencies:
-      - o2-analysis-hf-d0-candidate-selector
+    #- o2-analysis-multiplicity-table
+    #- o2-analysis-event-selection
+    #- o2-analysis-trackextension
+    - o2-analysis-trackselection
 
   # Tree creators
 
@@ -296,7 +299,8 @@ workflows:
 
   o2-analysis-trackselection:
     dependencies:
-      - o2-analysis-trackextension
+      #- o2-analysis-trackextension
+      - o2-analysis-track-propagation
 
   o2-analysis-trackselection-alice3:
     executable: o2-analysis-alice3-trackselection
@@ -309,6 +313,8 @@ workflows:
 
   o2-analysis-alice3-centrality:
     dependencies: o2-analysis-trackextension-alice3
+
+  o2-analysis-event-selection-qa: {}
 
   o2-analysis-event-selection:
     dependencies:

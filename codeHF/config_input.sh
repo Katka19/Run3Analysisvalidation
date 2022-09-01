@@ -4,9 +4,10 @@
 # Input specification for runtest.sh
 # (Modifies input parameters.)
 
-INPUT_CASE=2            # Input case
+INPUT_CASE=11            # Input case
 
-NFILESMAX=1             # Maximum number of processed input files. (Set to -0 to process all; to -N to process all but the last N files.)
+#NFILESMAX=30             # Maximum number of processed input files. (Set to -0 to process all; to -N to process all but the last N files.)
+NFILESMAX=-0             # Maximum number of processed input files. (Set to -0 to process all; to -N to process all but the last N files.)
 
 # Number of input files per job (Automatic optimisation on if < 1.)
 NFILESPERJOB_CONVERT=0  # Conversion
@@ -16,6 +17,7 @@ NFILESPERJOB_O2=1       # O2
 # Maximum number of simultaneously running O2 jobs
 NJOBSPARALLEL_O2=$(python3 -c "print(min(10, round($(nproc) / 2)))")
 
+JSONRUN2="dpl-config_run2.json"
 JSONRUN3="dpl-config_run3.json"  # Run 3 tasks parameters
 # Run 5 tasks parameters for open HF study
 JSONRUN5_HF="dpl-config_run5_hf.json"
@@ -79,5 +81,14 @@ case $INPUT_CASE in
     INPUT_LABEL="Run 2, p-p 13 TeV, LHC17j (AO2D)"
     INPUT_DIR="/data2/Run2samples/ConvertedData/LHC17j_date20220601/274671" # converted good AO2Ds
     INPUT_FILES="AO2D.root"
+    JSON="$JSONRUN2"
+    ISINPUTO2=1;;
+  11)
+    INPUT_LABEL="Run 3, p-p 13.6 TeV, LHC22c (AO2D)"
+    #INPUT_DIR="/data2/Run3samples/data/LHC22c/517767"
+    #INPUT_DIR="/data2/Run3samples/data/LHC22f/520472/apass1/AOD/001"
+    INPUT_DIR="/home/kgajdoso/alice/Run3Analysisvalidation/codeHF/data3/alice/data/2022/LHC22f/520472/apass1/"
+    INPUT_FILES="AO2D.root"
+    INPUT_RUN=3
     ISINPUTO2=1;;
   esac

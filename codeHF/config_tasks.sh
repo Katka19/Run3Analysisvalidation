@@ -14,7 +14,7 @@
 ####################################################################################################
 
 # Steps
-DOCLEAN=1           # Delete created files (before and after running tasks).
+DOCLEAN=0           # Delete created files (before and after running tasks).
 DOCONVERT=1         # Convert AliESDs.root to AO2D.root.
 DOALI=1             # Run AliPhysics tasks.
 DOO2=1              # Run O2 tasks.
@@ -29,7 +29,8 @@ MAKE_GRAPH=0        # Make topology graph.
 
 # Activation of O2 workflows
 # Trigger selection
-DOO2_TRIGSEL=0      # event-selection
+DOO2_TRIGSEL=1      # event-selection
+DOO2_TRIGSEL_QA=1      # event-selection-qa
 # QA
 DOO2_REJ_ALICE3=0   # hf-qa-rejection
 DOO2_QA_EFF=0       # qa-efficiency
@@ -62,7 +63,7 @@ DOO2_SEL_LCK0SP=0   # hf-lc-tok0sp-candidate-selector
 DOO2_SEL_XICC=0     # hf-xicc-topkpipi-candidate-selector
 DOO2_SEL_BPLUS=0    # hf-bplus-tod0pi-candidate-selector
 # User tasks
-DOO2_TASK_D0=1      # hf-task-d0
+DOO2_TASK_D0=0      # hf-task-d0
 DOO2_TASK_DPLUS=0   # hf-task-dplus
 DOO2_TASK_LC=0      # hf-task-lc
 DOO2_TASK_XIC=0     # hf-task-xic
@@ -85,7 +86,7 @@ DOO2_D0D0BAR_MCGEN=0     # hf-correlator-d0d0bar-mc-gen
 DOO2_DPLUSDMINUS_DATA=0  # hf-correlator-dplusdminus
 DOO2_DPLUSDMINUS_MCREC=0 # hf-correlator-dplusdminus-mc-rec
 DOO2_DPLUSDMINUS_MCGEN=0 # hf-correlator-dplusdminus-mc-gen
-DOO2_TASK_FLOW=0  # hf-task-flow
+DOO2_TASK_FLOW=1  # hf-task-flow
 # Other
 DOO2_MCCONV=0       # mc-converter
 DOO2_FDDCONV=0      # fdd-converter
@@ -281,6 +282,7 @@ function MakeScriptO2 {
   WORKFLOWS=""
   # Trigger selection
   [ $DOO2_TRIGSEL -eq 1 ] && WORKFLOWS+=" o2-analysis-event-selection"
+  [ $DOO2_TRIGSEL_QA -eq 1 ] && WORKFLOWS+=" o2-analysis-event-selection-qa"
   # QA
   [ $DOO2_REJ_ALICE3 -eq 1 ] && WORKFLOWS+=" o2-analysis-hf-qa-rejection"
   [ $DOO2_QA_EFF -eq 1 ] && WORKFLOWS+=" o2-analysis-qa-efficiency"

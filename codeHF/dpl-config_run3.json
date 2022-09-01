@@ -13,19 +13,16 @@
     "internal-dpl-aod-index-builder": "",
     "timestamp-task": {
         "verbose": "false",
-        "rct-path": "RCT/RunInformation",
-        "orbit-reset-path": "CTP/Calib/OrbitReset",
-        "ccdb-url": "http://alice-ccdb.cern.ch",
-        "isRun2MC": "true"
+        "isRun2MC": "false"
     },
     "bc-selection-task": {
-        "processRun2": "true",
-        "processRun3": "false"
+        "processRun2": "false",
+        "processRun3": "true"
     },
     "tof-signal": "",
     "track-extension": {
-        "processRun2": "true",
-        "processRun3": "false"
+        "processRun2": "false",
+        "processRun3": "true"
     },
     "lambdakzero-builder": {
         "dcanegtopv": "0.1",
@@ -45,9 +42,21 @@
         "syst": "pp",
         "muonSelection": "0",
         "customDeltaBC": "300",
-        "isMC": "true",
-        "processRun2": "true",
-        "processRun3": "false"
+        "isMC": "false",
+        "processRun2": "false",
+        "processRun3": "true"
+    },
+    "event-selection-qa-task": {
+        "isMC": "false",
+        "minGlobalBC": "0",
+        "nGlobalBCs": "100000",
+        "minOrbit": "0",
+        "nOrbits": "10000",
+        "refBC": "1238",
+        "isLowFlux": "true",
+        "processRun2": "false",
+        "processRun3": "true",
+        "processMCRun3": "false"
     },
     "track-selection": {
         "isRun3": "false"
@@ -149,7 +158,7 @@
         "processNoTrigSel": "true"
     },
     "multiplicity-table": {
-        "doVertexZeq": "1",
+        "doVertexZeq": "0",
         "processRun2": "true",
         "processRun3": "false"
     },
@@ -993,8 +1002,8 @@
     },
     "hf-task-flow": {
         "cfgCutVertex": "10.0",
-        "cfgCutEta": "0.8",
-        "cfgCutPt": "0.2",
+        "cfgCutEta": "1.1",
+        "cfgCutPt": "0.0",
         "d_selectionFlagD0": "0",
         "d_selectionFlagD0bar": "0",
         "cutYCandMax": "1.0",
@@ -1127,15 +1136,13 @@
                 "8"
             ]
         },
-        "processSameTPCTPChh": "true",
-        "processSameTPCMFThh": "false",
-        "processSameHFHadrons": "true",
-        "processMC": "true",
         "cfgNoMixedEvents": 5,
-        "processMixedTPCTPChh": "true",
-        "processMixedHFHadrons": "true",
-        "processRun2": "true",
-        "processRun3": "false"
+        "processSameRun3All": "false",
+        "processSameRun3Associated": "true",
+        "processSameRun2Associated": "false",
+        "processMixed": "true",
+        "processRun2": "false",
+        "processRun3": "true"
     },
     "qa-tracking-efficiency-electron": {
         "eta-min": "-3",
