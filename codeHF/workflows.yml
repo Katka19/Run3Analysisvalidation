@@ -265,8 +265,8 @@ workflows:
     dependencies: o2-analysis-hf-correlator-d0-hadrons
 
   o2-analysis-hf-task-flow:
-    dependencies:
-      - o2-analysis-hf-candidate-selector-d0
+    dependencies: [o2-analysis-multiplicity-table_runX]
+    #dependencies: [o2-analysis-event-selection, o2-analysis-hf-candidate-selector-d0, o2-analysis-multiplicity-table_runX]
 
   # Tree creators
 
